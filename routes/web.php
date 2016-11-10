@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'PagesController@home');
+
+Route::get('auth/register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+Route::post('auth/register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@register']);
