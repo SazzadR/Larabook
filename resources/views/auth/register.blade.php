@@ -3,6 +3,8 @@
 @section('content')
 	<h1>Register</h1>
 
+	@include('layouts.partials.errors')
+
 	{!! Form::open(['route' => 'auth.register']) !!}
 		<div class="form-group">
 			{!! Form::label('username', 'Username:') !!}
