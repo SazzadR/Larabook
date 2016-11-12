@@ -13,10 +13,12 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::get('auth/register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-Route::post('auth/register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@register']);
-Route::get('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@showLoginForm']);
-Route::post('auth/login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@login']);
-Route::post('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    Route::post('register', ['as' => 'auth.register', 'uses' => 'Auth\RegisterController@register']);
+    Route::get('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@showLoginForm']);
+    Route::post('login', ['as' => 'auth.login', 'uses' => 'Auth\LoginController@login']);
+    Route::post('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
+});
 
 Route::get('status', 'StatusController@index');
