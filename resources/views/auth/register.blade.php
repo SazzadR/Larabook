@@ -23,7 +23,7 @@
 			{!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::submit('Reginter', ['class' => 'btn btn-primary']) !!}
+			{!! Form::submit('Register', ['class' => 'btn btn-primary']) !!}
 		</div>
 	{!! Form::close() !!}
 @stop
