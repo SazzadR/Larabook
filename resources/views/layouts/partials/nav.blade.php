@@ -27,11 +27,20 @@
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li>
+                            <a href="{{ route('auth.logout') }}"
+                                onclick="event.preventDefault();
+                                        document.getElementById('logout_form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout_form" action="{{ route('auth.logout') }}" method="POST" style="display: none">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
                     </ul>
                 </li>
                 @else
-                    <li><a href="#">Login</a></li>
+                    <li><a href="{{ route('auth.login') }}">Login</a></li>
                 @endif
             </ul>
         </div>
