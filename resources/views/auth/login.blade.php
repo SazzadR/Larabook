@@ -3,6 +3,8 @@
 @section('content')
     <h1>Sign In!</h1>
 
+    @include('layouts.partials.errors')
+
     {!! Form::open(['route' => 'auth.login']) !!}
         <div class="form-group">
             {!! Form::label('email', 'Email:') !!}
