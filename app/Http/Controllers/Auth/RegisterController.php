@@ -6,6 +6,7 @@ use App\Events\UserRegistered;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -71,6 +72,8 @@ class RegisterController extends Controller
         ]);
 
         Event::fire(new UserRegistered($user));
+
+        Session::flash('success', 'Glad to have you as a new Larabook member!');
 
         return $user;
     }
