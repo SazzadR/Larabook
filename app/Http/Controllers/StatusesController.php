@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Validator;
 
 class StatusesController extends Controller
 {
@@ -21,8 +22,23 @@ class StatusesController extends Controller
         return view('status.index');
     }
 
+    public function validator($request)
+    {
+        $rules = [
+            'body' => 'required',
+        ];
+
+        $messages = [
+            'body.required' => 'Status can\'t be empty',
+        ];
+
+        Validator::make($request->all(), $rules, $messages)->validate();
+    }
+
     public function store(Request $request)
     {
+        $this->validator($request);
+
         $user = User::find(Auth::user()->id);
 
         $user->statuses()->create($request->all());

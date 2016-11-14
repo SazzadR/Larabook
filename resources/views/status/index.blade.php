@@ -3,6 +3,8 @@
 @section('content')
     <h1>Post a Status</h1>
 
+    @include('layouts.partials.errors')
+
     {!! Form::open(['route' => 'status.store']) !!}
         <div class="form-group">
             {!! Form::label('body', 'Status') !!}
