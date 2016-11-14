@@ -19,7 +19,8 @@ class StatusesController extends Controller
 
     public function index()
     {
-        return view('status.index');
+        $statuses = Status::all();
+        return view('status.index', compact('statuses'));
     }
 
     public function validator($request)
