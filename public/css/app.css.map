@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,kBAAkB,EACnB","file":"app.css","sourcesContent":["body {\n  padding-top: 70px;\n}"]}
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACE,kBAAkB,EACnB;;AAED;EACE,YAAY;EACZ,mBAAmB;EACnB,UAAU;EACV,WAAW;EACX,0BAA0B,EAC3B","file":"app.css","sourcesContent":["body {\n  padding-top: 70px;\n}\n\n#profile-image {\n  float: left;\n  position: relative;\n  top: -6px;\n  left: -8px;\n  border: 1px solid #555555;\n}"]}
