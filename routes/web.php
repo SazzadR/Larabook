@@ -21,4 +21,5 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('logout', ['as' => 'auth.logout', 'uses' => 'Auth\LoginController@logout']);
 });
 
-Route::get('status', 'StatusController@index');
+Route::get('status', ['as' => 'status.index', 'uses' => 'StatusesController@index']);
+Route::post('status', ['as' => 'status.store', 'uses' => 'StatusesController@store']);
