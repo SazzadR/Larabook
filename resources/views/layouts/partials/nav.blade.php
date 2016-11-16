@@ -18,30 +18,30 @@
 
             <ul class="nav navbar-nav navbar-right">
                 @if(Auth::check())
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img id="profile-image" src="//gravatar.com/avatar/{{ md5(strtolower(trim(Auth::user()->email))) }}?s=30" alt="{{ Auth::user()->username }}">
-                        {{ ucfirst(Auth::user()->username) }} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="{{ route('auth.logout') }}"
-                                onclick="event.preventDefault();
-                                        document.getElementById('logout_form').submit();">
-                                Logout
-                            </a>
-                            <form id="logout_form" action="{{ route('auth.logout') }}" method="POST" style="display: none">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img id="profile-image" src="{{ Auth::user()->present()->gravatar(Auth::user()->email, 30) }}" alt="{{ Auth::user()->username }}">
+                            {{ ucfirst(Auth::user()->username) }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ route('auth.logout') }}"
+                                    onclick="event.preventDefault();
+                                            document.getElementById('logout_form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout_form" action="{{ route('auth.logout') }}" method="POST" style="display: none">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                 @else
                     <li><a href="{{ route('auth.register') }}">Register</a></li>
                     <li><a href="{{ route('auth.login') }}">Login</a></li>
