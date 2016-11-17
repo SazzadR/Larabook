@@ -3,9 +3,10 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
+use App\Status;
 use App\User;
 
-class UsersTableSeeder extends Seeder
+class StatusesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +17,12 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
+        $users = User::all()->pluck('id')->toArray();
+
         foreach (range(1, 50) as $index) {
-            User::create([
-                'username' => $faker->word,
-                'email' => $faker->email,
-                'password' => bcrypt('secret')
+            Status::create([
+                'user_id' => $faker->randomElement($users),
+                'body' => $faker->sentence
             ]);
         }
     }
