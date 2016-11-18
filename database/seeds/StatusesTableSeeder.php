@@ -16,11 +16,12 @@ class StatusesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $users = User::where('id' ,'>' ,0)->pluck('id')->toArray();
+
+        $users = User::all()->pluck('id')->toArray();
 
         foreach (range(1, 50) as $index) {
             Status::create([
-                'user_id' => $faker->randomElements($users),
+                'user_id' => $faker->randomElement($users),
                 'body' => $faker->sentence
             ]);
         }
