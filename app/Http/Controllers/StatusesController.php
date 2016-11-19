@@ -19,7 +19,7 @@ class StatusesController extends Controller
 
     public function index()
     {
-        $statuses = Status::with('user')->latest()->get();
+        $statuses = Status::with('user')->where('user_id', Auth::user()->id)->latest()->get();
            
         return view('status.index', compact('statuses'));
     }
