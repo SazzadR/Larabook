@@ -23,3 +23,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::get('status', ['as' => 'status.index', 'uses' => 'StatusesController@index']);
 Route::post('status', ['as' => 'status.store', 'uses' => 'StatusesController@store']);
+
+Route::group(['prefix' => 'users'], function () {
+    Route::get('list', ['as' => 'users.list', 'uses' => 'UsersController@index']);
+});

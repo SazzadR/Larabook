@@ -38,10 +38,23 @@ body {
   }
 }
 
-// Each inidividual status
+// Each individual status
 .status-media {
   border: 1px solid #e3e3e3;
   background: white;
   padding: 1em;
   margin-bottom: 2px;
+}
+
+// User list
+.users {
+  margin-bottom: 3em  ;
+}
+
+.user-block {
+  text-align: center;
+
+  .avatar {
+    margin: auto;
+  }
 }
