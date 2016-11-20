@@ -19,6 +19,7 @@ body {
 
   textarea {
     border: none;
+    resize: vertical;
 
     &:focus {
       box-shadow: none;
