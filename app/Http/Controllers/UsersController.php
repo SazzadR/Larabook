@@ -22,6 +22,9 @@ class UsersController extends Controller
             }
         ])->where('username', $username)->first();
 
-        return view('users.show', compact('user'));
+        $currentUser = User::find(Auth::user()->id);
+        $currentUserFollows = $currentUser->follows->contains($user->id);
+
+        return view('users.show', compact('user', 'currentUserFollows'));
     }
 }

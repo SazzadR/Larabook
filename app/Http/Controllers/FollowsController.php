@@ -13,8 +13,17 @@ class FollowsController extends Controller
     {
 		$follower = User::find(Auth::user()->id);
 
-		$follower->follows()->sync([$followed_id]);
+		$follower->follows()->sync([$followed_id], false);
 
 		return redirect()->back();
+    }
+
+    public function unfollow($followed_id)
+    {
+        $follower = User::find(Auth::user()->id);
+
+        $follower->follows()->detach([$followed_id], false);
+
+        return redirect()->back();
     }
 }
