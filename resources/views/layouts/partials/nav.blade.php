@@ -7,13 +7,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Larabook</a>
+            <a class="navbar-brand" href="{{ url('/') }}">Larabook</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
+                @if(Auth::check())
+                    <li class="{{ Request::is('users/list') ? 'active' : '' }}"><a href="{{ route('users.list') }}">Browse Users <span class="sr-only">(current)</span></a></li>
+                @endif
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -24,11 +25,8 @@
                             {{ ucfirst(Auth::user()->username) }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
+                            <li><a href="{{ route('user.profile', Auth::user()->username) }}">My Profile</a></li>
                             <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a href="{{ route('auth.logout') }}"

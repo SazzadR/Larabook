@@ -1,6 +1,10 @@
 <article class="media status-media">
     <div class="pull-left">
-        @include('layouts.partials.avatar', ['user' => Auth::user()])
+        @if(isset($user->username))
+            @include('layouts.partials.avatar')
+        @else
+            @include('layouts.partials.avatar', ['user' => Auth::user()])
+        @endif
     </div>
 
     <div class="media-boxy">

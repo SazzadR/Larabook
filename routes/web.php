@@ -26,4 +26,5 @@ Route::post('status', ['as' => 'status.store', 'uses' => 'StatusesController@sto
 
 Route::group(['prefix' => 'users'], function () {
     Route::get('list', ['as' => 'users.list', 'uses' => 'UsersController@index']);
+    Route::get('{username}', ['as' => 'user.profile', 'uses' => 'UsersController@show']);
 });
