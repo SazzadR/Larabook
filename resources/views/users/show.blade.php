@@ -7,13 +7,7 @@
 
             @include('layouts.partials.avatar', ['size' => 100])
 
-            @if( ! $user->is(Auth::user()) )
-                @if( ! $currentUserFollows )
-                    @include('users.partials.follow-form')
-                @else
-                    @include('users.partials.un-follow-form')
-                @endif
-            @endif
+            @include('users.partials.follow-button')
         </div>
 
         <div class="col-md-6">
