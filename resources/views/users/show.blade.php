@@ -2,12 +2,22 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-3">
-            <h1>{{ $user->username }}</h1>
+        <div class="col-md-4">
+            <div class="media">
+                <div class="pull-left">
+                    @include('layouts.partials.avatar', ['size' => 50])
+                </div>
 
-            @include('layouts.partials.avatar', ['size' => 100])
+                <div class="media-body">
+                    <h1 class="media-heading">{{ $user->username }}</h1>
+                    <ul class="list-inline text-muted">
+                        <li>{{ $user->present()->statusCount() }}</li>
+                        <li>{{ $user->present()->followerCount() }}</li>
+                    </ul>
 
-            @include('users.partials.follow-button')
+                    @include('users.partials.follow-button')
+                </div>
+            </div>
         </div>
 
         <div class="col-md-6">
