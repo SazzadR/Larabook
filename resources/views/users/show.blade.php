@@ -17,6 +17,12 @@
 
                     @include('users.partials.follow-button')
                 </div>
+
+                @foreach($user->followers as $follower)
+                    <div style="padding-top: 1em; display: inline-block">
+                        @include('status.partials.avatar-with-profile-link', ['user' => $follower, 'size' => 25])
+                    </div>
+                @endforeach
             </div>
         </div>
 
