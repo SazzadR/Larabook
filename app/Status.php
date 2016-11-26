@@ -8,7 +8,7 @@ use App\Presenter\PresentableTrait;
 
 class Status extends Model
 {
-    use Presentabletrait;
+    use PresentableTrait;
 
     protected $table = 'statuses';
 
