@@ -7,7 +7,7 @@
 
             @include('layouts.partials.errors')
 
-            {!! Form::open(['route' => 'auth.password.reset']) !!}
+            {!! Form::open(['route' => 'auth.password.reset.sendResetEmail']) !!}
                 <div class="form-group">
                     {!! Form::label('email', 'Email:') !!}
                     {!! Form::email('email', null, ['class' => 'form-control']) !!}

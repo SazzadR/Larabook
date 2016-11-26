@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             {!! Form::submit('Login', ['class' => 'btn btn-primary']) !!}
-            <a href="{{ route('auth.password.reset') }}" class="btn btn-link">
+            <a href="{{ route('auth.password.reset.showLinkRequest') }}" class="btn btn-link">
                 Forget Your Password?
             </a>
         </div>
