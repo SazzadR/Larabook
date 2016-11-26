@@ -8,7 +8,7 @@
             @include('layouts.partials.errors')
 
             {!! Form::open(['route' => 'auth.password.reset']) !!}
-            
+
                 {!! Form::hidden('token', $token) !!}
 
                 <div class="form-group">
