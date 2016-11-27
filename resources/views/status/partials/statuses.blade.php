@@ -9,3 +9,7 @@
         {{ $status->body }}
     </div>
 </article>
+
+@include('status.partials.comment-form')
+
+@include('status.partials.show-comments')

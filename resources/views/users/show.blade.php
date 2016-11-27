@@ -39,3 +39,7 @@
         </div>
     </div>
 @stop
+
+@section('page_specific_js')
+    <script type="text/javascript" src="{{ asset('js/submit-form-with-enter.js') }}"></script>
+@stop
