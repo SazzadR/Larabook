@@ -89,6 +89,13 @@
     .navbar-default .navbar-nav > li > a:hover {
       color: #2C6C91; }
 
+.navbar-nav > li > .dropdown-menu {
+  background-color: #00bae9; }
+  .navbar-nav > li > .dropdown-menu a {
+    padding: 10px; }
+    .navbar-nav > li > .dropdown-menu a:hover {
+      background-color: #0091b6; }
+
 .navbar-default .navbar-nav > .active > a {
   background-color: #0091b6; }
 

@@ -16,6 +16,17 @@
   }
 }
 
+.navbar-nav > li > .dropdown-menu {
+  background-color: #00bae9;
+  a {
+    padding: 10px;
+
+    &:hover {
+      background-color: #0091b6;
+    }
+  }
+}
+
 .navbar-default .navbar-nav > .active > a {
   background-color: darken(#00BAE9, 10%);
 }

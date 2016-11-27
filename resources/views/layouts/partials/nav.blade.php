@@ -26,7 +26,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('user.profile', Auth::user()->username) }}">My Profile</a></li>
-                            <li><a href="#">Another action</a></li>
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a href="{{ route('auth.logout') }}"
