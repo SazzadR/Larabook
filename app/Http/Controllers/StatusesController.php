@@ -30,7 +30,7 @@ class StatusesController extends Controller
         $idsForStatus = $follows;
         array_unshift($idsForStatus, $loggedInUserId);
 
-        $statuses = Status::with(['user', 'comments'])->whereIn('user_id', $idsForStatus)->latest()->get();
+        $statuses = Status::with(['user', 'comments', 'likes'])->whereIn('user_id', $idsForStatus)->latest()->get();
 
         return view('status.index', compact('statuses'));
     }

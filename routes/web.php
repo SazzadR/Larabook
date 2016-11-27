@@ -18,4 +18,5 @@ Route::post('status', ['as' => 'status.store', 'uses' => 'StatusesController@sto
 
 Route::group(['prefix' => 'status'], function () {
     Route::post('{statusId}/comment', ['as' => 'status.comment', 'uses' => 'CommentsController@store']);
+    Route::post('like', ['as' => 'status.like', 'uses' => 'LikesController@like']);
 });

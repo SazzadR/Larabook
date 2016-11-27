@@ -73,6 +73,9 @@
   border: 1px solid #d9d9d9;
   border-bottom: 1px solid #e3e3e3; }
 
+.like-counter {
+  margin-top: .3em; }
+
 .btn-primary {
   background: #00BAE9;
   border: 1px solid #0091b6; }

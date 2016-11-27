@@ -10,4 +10,12 @@ class StatusPresenter extends Presenter
     {
         return $this->created_at->diffForHumans();
     }
+
+    public function likesCount()
+    {
+        $count = $this->entity->likes()->count();
+        $plural = str_plural('Like', $count);
+
+        echo "<span> {$count} </span> {$plural}";
+    }
 }

@@ -9,7 +9,7 @@ class DatabaseSeeder extends Seeder
      *
      * @var array
      */
-    protected $tables = ['users', 'statuses'];
+    protected $tables = ['users', 'statuses', 'comments', 'likes', 'follows', 'password_resets', 'jobs'];
 
     /**
      * Set the seeder classnames
@@ -25,11 +25,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Eloquent::unguard();
+
+        // Disable foreign key check for this connection before running seeders
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         $this->cleanDatabase();
 
         foreach ($this->seeders as $seeder) {
             $this->call($seeder);
         }
+
+        // Enable foreign key check for this connection after running seeders
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 
     /**
