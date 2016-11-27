@@ -41,8 +41,8 @@
                         </ul>
                     </li>
                 @else
-                    <li><a href="{{ route('auth.register') }}">Register</a></li>
-                    <li><a href="{{ route('auth.login') }}">Login</a></li>
+                    <li class="{{ Request::is('auth/register') ? 'active' : '' }}"><a href="{{ route('auth.register') }}">Register</a></li>
+                    <li class="{{ Request::is('auth/login') ? 'active' : '' }}"><a href="{{ route('auth.login') }}">Login</a></li>
                 @endif
             </ul>
         </div>
