@@ -17,7 +17,7 @@ class StatusesController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $loggedInUserId = Auth::user()->id;
 
@@ -30,7 +30,12 @@ class StatusesController extends Controller
         $idsForStatus = $follows;
         array_unshift($idsForStatus, $loggedInUserId);
 
-        $statuses = Status::with(['user', 'comments', 'likes'])->whereIn('user_id', $idsForStatus)->latest()->get();
+        $statuses = Status::with(['user', 'comments', 'likes'])->whereIn('user_id', $idsForStatus)->latest()->paginate(5);
+
+        if ($request->ajax()) {
+            $view = view('status.data', compact('statuses'))->render();
+            return response()->json(['html' => $view]);
+        }
 
         return view('status.index', compact('statuses'));
     }

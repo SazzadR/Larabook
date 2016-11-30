@@ -15,7 +15,3 @@
 @include('status.partials.comment-form')
 
 @include('status.partials.show-comments')
-
-@section('page_specific_js')
-    <script type="text/javascript" src="{{ asset('js/like-status.js') }}"></script>
-@stop

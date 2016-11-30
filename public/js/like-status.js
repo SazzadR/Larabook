@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.like-btn').on('click', function (element) {
+    $('body').on('click', '.like-btn', function (element) {
 
         var form = $(this).parent('form');
         var postUrl = window.location.protocol + '//' + window.location.host + '/status/like';

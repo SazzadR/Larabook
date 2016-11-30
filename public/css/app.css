@@ -76,6 +76,11 @@
 .like-counter {
   margin-top: .3em; }
 
+.ajax-load {
+  background: #e1e1e1;
+  padding: 20px 0px;
+  width: 100%; }
+
 .btn-primary {
   background: #00BAE9;
   border: 1px solid #0091b6; }
