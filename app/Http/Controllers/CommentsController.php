@@ -16,7 +16,12 @@ class CommentsController extends Controller
     {
         $status = Status::find($statusId);
 
-        $status->comments()->create($request->all());
+        $comment = $status->comments()->create($request->all());
+
+        if ($request->ajax()) {
+            $view = view('status.ajax.comment-data', compact('comment'))->render();
+            return response()->json(['comment' => $view]);
+        }
 
         return redirect()->back();
     }
