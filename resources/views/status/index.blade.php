@@ -9,7 +9,7 @@
             @include('status.partials.publish-status-form')
 
             <div id="statuses">
-                @include('status.data')
+                @include('status.ajax.status-data')
             </div>
 
             <div class="ajax-load text-center" style="display:none">

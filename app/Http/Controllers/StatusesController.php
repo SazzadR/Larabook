@@ -33,7 +33,7 @@ class StatusesController extends Controller
         $statuses = Status::with(['user', 'comments', 'likes'])->whereIn('user_id', $idsForStatus)->latest()->paginate(5);
 
         if ($request->ajax()) {
-            $view = view('status.data', compact('statuses'))->render();
+            $view = view('status.ajax.status-data', compact('statuses'))->render();
             return response()->json(['html' => $view]);
         }
 
