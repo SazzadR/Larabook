@@ -23,7 +23,7 @@ class UsersController extends Controller
         ])->where('username', $username)->first();
 
 
-        if ($user->id == Auth::user()->id) {
+        if ($user->is(Auth::user())) {
             return view('users.show', compact('user'));
         }
 
