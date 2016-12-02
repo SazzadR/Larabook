@@ -14,15 +14,15 @@ function loadMoreStatus(page) {
             $('.ajax-load').show();
         }
     })
-        .done(function (response) {
-            if (response.html.length > 0) {
-                $('.ajax-load').hide();
-                $('#statuses').append(response.html);
-            } else {
-                $('.ajax-load').html('No more status found');
-            }
-        })
-        .fail(function (jqXHR, ajaxOptions, thrownError) {
-            console.log('Server not responding...');
-        });
+    .done(function (response) {
+        if (response.html.length > 0) {
+            $('.ajax-load').hide();
+            $('#statuses').append(response.html);
+        } else {
+            $('.ajax-load').html('No more status found');
+        }
+    })
+    .fail(function (jqXHR, ajaxOptions, thrownError) {
+        console.log('Server not responding...');
+    });
 }
