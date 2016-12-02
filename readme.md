@@ -1,3 +1,3 @@
 ## About Larabook
 
-This is a Laravel 5 implementation to [Laracasts](https://laracasts.com) **Build Larabook From Scratch** [tutorial](https://laracasts.com/series/build-a-laravel-app-from-scratch) which was based on Laravel 4. We use Laravel 5.3 for rebuilding that project.
+This is a improved and Laravel 5 implementation of [Laracasts](https://laracasts.com) **Build Larabook From Scratch** [tutorial](https://laracasts.com/series/build-a-laravel-app-from-scratch) which was based on Laravel 4. We use Laravel 5.3 for rebuilding that project. We have also add some additional features like `scrolling pagination, like functionality` etc. in this improved version.
